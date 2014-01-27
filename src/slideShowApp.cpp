@@ -1,8 +1,19 @@
 #include "slideShowApp.h"
 
+
+/*
+ 
+ File Management:
+ - open files from directory
+ 
+ 
+ */
+
 //--------------------------------------------------------------
 void slideShowApp::setup(){
 
+    slideShow.setup(SCREEN_WIDTH, SCREEN_HEIGHT, "~/test_image_folder");
+    
 }
 
 //--------------------------------------------------------------

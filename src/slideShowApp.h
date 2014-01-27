@@ -1,9 +1,17 @@
 #pragma once
 
 #include "ofMain.h"
+#include "SlideShow.h"
+
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 1000
+
+#define BACKGROUND_COLOR 0x000000
 
 class slideShowApp: public ofBaseApp{
-
+    
+    SlideShow slideShow;
+    
 	public:
 		void setup();
 		void update();
