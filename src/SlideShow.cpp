@@ -22,6 +22,7 @@
  */
 
 #include "SlideShow.h"
+#include "FillAndPanAnimator.h"
 
 bool SlideShow::setup(float screenWidth, float screenHeight, string imageDirectoryPath) {
  
@@ -31,61 +32,34 @@ bool SlideShow::setup(float screenWidth, float screenHeight, string imageDirecto
     this->screenHeight = screenHeight;
     this->imageDirectoryPath = imageDirectoryPath;
     
-    this->loadImageFilesFromDirectory(imageDirectoryPath);
+    imageCollection = new ImageCollection(imageDirectoryPath);
+    
+    img = imageCollection->getNextImage();
+    
+    animator = new FillAndPanAnimator(img,screenWidth,screenHeight);
     
 }
 
+SlideShow::~SlideShow() {
+    delete(imageCollection);
+    delete(animator);
+}
 
-int SlideShow::loadImageFilesFromDirectory(string directoryPath) {
-    
-    ofDirectory dir(directoryPath);
-    
-    if (!dir.exists()) {
-        ofLogError("Image directory path does not exist: " + imageDirectoryPath);
-        throw ("Image directory path does not exist: " + imageDirectoryPath);
+bool SlideShow::update() {
+    if (!animator->update()) {
+        img = imageCollection->getNextImage();
+        delete(animator);
+        animator = new FillAndPanAnimator(img,screenWidth,screenHeight);
     }
-
-    dir.listDir();
-
-    vector<ofFile> files = dir.getFiles();
-        
-    // get number of image files
-    for (ofFile file : files) {
-        if (this->extensionIsImage(file.getExtension())) {
-            imageFiles.push_back(file);
-        }
-    }
-    
-    if (imageFiles.size() <= 0) {
-        ofLogError("No image files found!");
-        throw("No image files found!!!");
-    }
-    else {
-        ofLogNotice() << imageFiles.size() << " image file found.";
-    }
-    
 }
 
-bool SlideShow::extensionIsImage(string ext) {
-    return ext == "png" || ext == "jpg" || ext == "jpeg";
-}
-
-ofPoint SlideShow::getPointOfInterestForImage(ofImage image) {
-    
-}
-
-ofRectangle SlideShow::getRectangleOfInterestForPoint(ofPoint point) {
-    
+void SlideShow::draw() {
+    ofSetColor(255);
+    animator->draw();
 }
 
 
-string SlideShow::chooseNextImageFromVector(vector<string> imageFileNames) {
-    
-}
 
-ofImage SlideShow::loadImage(string imageFileName) {
-    
-}
 
 // draw image to fill screen (or get image rect)
 // draw image to show entire image (or get image rect)

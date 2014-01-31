@@ -11,7 +11,7 @@
 class slideShowApp: public ofBaseApp{
     
     SlideShow slideShow;
-    
+        
 	public:
 		void setup();
 		void update();

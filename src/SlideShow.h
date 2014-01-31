@@ -11,17 +11,24 @@
 
 #include <iostream>
 #include "ofMain.h"
-
+#include "Animator.h"
+#include "ImageCollection.h"
 
 /*
     Some type of border? Or blur effect?
  */
 
 class SlideShow {
+        
+    ofImage img;
     
-    bool extensionIsImage(string ext);
+    Animator * animator;
+    
+    ImageCollection * imageCollection;
 
 public:
+    
+    ~SlideShow();
 
     vector<ofFile> imageFiles;
     
@@ -31,18 +38,8 @@ public:
     
     bool setup(float screenWidth, float screenHeight, string imageDirectoryPath);
 
-
-    ofPoint getPointOfInterestForImage(ofImage image);
-    ofRectangle getRectangleOfInterestForPoint(ofPoint point);
-
-    int loadImageFilesFromDirectory(string dir);
-
-    string chooseNextImageFromVector(vector<string> imageFileNames);
-
-    ofImage loadImage(string imageFileName);
-    
-
-    
+    bool update();
+    void draw();
     
 };
 
