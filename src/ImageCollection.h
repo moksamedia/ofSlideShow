@@ -32,6 +32,10 @@ public:
     
     bool extensionIsImage(string ext);
     
+    vector<string> getImageFileNames();
+    
+    ofImage loadImageForName(string name);
+    
 private:
     
     void loadImageFilesFromDirectory(string dir);

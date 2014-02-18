@@ -17,8 +17,8 @@ class Animator {
 protected:
     
     ofImage image;
-    float screenWidth;
-    float screenHeight;
+    float windowWidth;
+    float windowHeight;
     
 public:
     

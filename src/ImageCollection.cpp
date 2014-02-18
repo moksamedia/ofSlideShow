@@ -16,6 +16,24 @@ ImageCollection::ImageCollection(string pathToImageFilesDirectory) {
     
 }
 
+ofImage ImageCollection::loadImageForName(string name) {
+    
+    int idx = 0;
+    
+    for (ofFile file : imageFiles) {
+        if (file.getFileName() == name) {
+            break;
+        }
+        idx++;
+    }
+    
+    currentImageIndex = idx;
+    
+    return getNextImage();
+    
+}
+
+
 ofImage ImageCollection::getNextImage() {
     
     if (currentImageIndex >= getNumberOfImages()) {
@@ -31,6 +49,19 @@ ofImage ImageCollection::getNextImage() {
 
 int ImageCollection::getNumberOfImages() {
     return imageFiles.size();
+}
+
+vector<string> ImageCollection::getImageFileNames() {
+    
+    vector<string> fileNames;
+    
+    for (ofFile file : imageFiles) {
+        if (this->extensionIsImage(file.getExtension())) {
+            fileNames.push_back(file.getFileName());
+        }
+    }
+    
+    return fileNames;
 }
 
 

@@ -27,7 +27,7 @@ class FillAndPanAnimator : public Animator {
     
     
 public:
-    FillAndPanAnimator(ofImage img, float screenWidth, float screenHeight);
+    FillAndPanAnimator(ofImage img, float windowWidth, float windowHeight);
     
     void draw();
     bool update();

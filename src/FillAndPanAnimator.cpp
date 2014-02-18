@@ -42,12 +42,12 @@ bool FillAndPanAnimator::update() {
 }
 
 void FillAndPanAnimator::draw() {
-    image.drawSubsection(0.0, 0.0, screenWidth, screenHeight, currentRect.getX(), currentRect.getY());
+    image.drawSubsection(0.0, 0.0, windowWidth, windowHeight, currentRect.getX(), currentRect.getY());
 }
 
-FillAndPanAnimator::FillAndPanAnimator(ofImage img, float screenWidth, float screenHeight) : Animator(img,screenWidth,screenHeight) {
+FillAndPanAnimator::FillAndPanAnimator(ofImage img, float windowWidth, float windowHeight) : Animator(img,windowWidth,windowHeight) {
     
-    float screenRatio = screenHeight / screenWidth;
+    float screenRatio = windowHeight / windowWidth;
     
     float imageRatio = image.getHeight() / image.getWidth();
     
@@ -58,23 +58,23 @@ FillAndPanAnimator::FillAndPanAnimator(ofImage img, float screenWidth, float scr
      */
     if (screenRatio > imageRatio) {
         
-        fromRect.setHeight(screenHeight);
-        fromRect.setWidth(screenWidth);
+        fromRect.setHeight(windowHeight);
+        fromRect.setWidth(windowWidth);
         fromRect.setX(0);
         fromRect.setY(0);
         
-        float newImageHeight = screenHeight;
-        float newImageWidth = image.getWidth() * (screenHeight / image.getHeight());
+        float newImageHeight = windowHeight;
+        float newImageWidth = image.getWidth() * (windowHeight / image.getHeight());
 
         image.resize(newImageWidth, newImageHeight);
         
-        toRect.setHeight(screenHeight);
-        toRect.setWidth(screenWidth);
+        toRect.setHeight(windowHeight);
+        toRect.setWidth(windowWidth);
         /*
          * Image should be wider than the screen, so we want to pan 
          * the length of the difference.
          */
-        distanceInPixelsToPan = newImageWidth - screenWidth;
+        distanceInPixelsToPan = newImageWidth - windowWidth;
         toRect.setX(distanceInPixelsToPan);
         toRect.setY(0);
         
@@ -88,19 +88,19 @@ FillAndPanAnimator::FillAndPanAnimator(ofImage img, float screenWidth, float scr
     else {
         
         // Resize image, stretching horizontally
-        float newImageWidth = screenWidth;
-        float newImageHeight = image.getHeight() * (screenWidth / image.getWidth());
+        float newImageWidth = windowWidth;
+        float newImageHeight = image.getHeight() * (windowWidth / image.getWidth());
         image.resize(newImageWidth, newImageHeight);
 
-        fromRect.setHeight(screenHeight);
-        fromRect.setWidth(screenWidth);
+        fromRect.setHeight(windowHeight);
+        fromRect.setWidth(windowWidth);
         fromRect.setX(0);
         fromRect.setY(0);
 
-        toRect.setHeight(screenHeight);
-        toRect.setWidth(screenWidth);
+        toRect.setHeight(windowHeight);
+        toRect.setWidth(windowWidth);
         toRect.setX(0);
-        distanceInPixelsToPan = newImageHeight - screenHeight;
+        distanceInPixelsToPan = newImageHeight - windowHeight;
         toRect.setY(distanceInPixelsToPan);
 
     }

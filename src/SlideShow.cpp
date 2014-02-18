@@ -23,6 +23,7 @@
 
 #include "SlideShow.h"
 #include "FillAndPanAnimator.h"
+#include "ZoneOfInterestAnimator.h"
 
 bool SlideShow::setup(float screenWidth, float screenHeight, string imageDirectoryPath) {
  
@@ -36,7 +37,11 @@ bool SlideShow::setup(float screenWidth, float screenHeight, string imageDirecto
     
     img = imageCollection->getNextImage();
     
-    animator = new FillAndPanAnimator(img,screenWidth,screenHeight);
+    //animator = new FillAndPanAnimator(img,screenWidth,screenHeight);
+    ofRectangle zoneOfInterest(1123,1786,808,800);
+    vector<ofRectangle> zones;
+    zones.push_back(zoneOfInterest);
+    animator = new ZoneOfInterestAnimator(img,screenWidth,screenHeight,zones);
     
 }
 

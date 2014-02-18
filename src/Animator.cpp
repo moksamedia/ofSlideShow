@@ -8,10 +8,10 @@
 
 #include "Animator.h"
 
-Animator::Animator(ofImage img, float screenWidth, float screenHeight) {
+Animator::Animator(ofImage img, float windowWidth, float windowHeight) {
     image = img;
-    this->screenWidth = screenWidth;
-    this->screenHeight = screenHeight;
+    this->windowWidth = windowWidth;
+    this->windowHeight = windowHeight;
 }
 
 Animator::~Animator() {
