@@ -12,14 +12,30 @@
 #include <iostream>
 #include "ofMain.h"
 #include "Animator.h"
+#include "ZOIState.h"
+
 
 class ZoneOfInterestAnimator : public Animator {
+    
+protected:
+    
+    ZOIState * startState;
+    ZOIState * transitionState;
+    ZOIState * endState;
+   
+    ZOIState * state;
+    
+    ofRectangle * fromZone;
+    ofRectangle * toZone;
+    
+    unsigned currentFromZoneIndex;
     
     vector<ofRectangle> zonesOfInterest;
     ofImage image;
     ofRectangle currentAdjustedRect;
     
 public:
+    
     ZoneOfInterestAnimator(ofImage img, float windowWidth, float windowHeight, vector<ofRectangle> zones);
     
     void draw();

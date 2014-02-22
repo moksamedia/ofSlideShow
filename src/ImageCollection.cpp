@@ -40,7 +40,7 @@ ofImage ImageCollection::getNextImage() {
         currentImageIndex = 0;
     }
     
-    currentImage.loadImage(imageFiles[currentImageIndex].getAbsolutePath());
+    currentImage = loadImage(imageFiles[currentImageIndex].getAbsolutePath());
     
     currentImageIndex++;
     
@@ -102,5 +102,25 @@ bool ImageCollection::extensionIsImage(string ext) {
 ofImage ImageCollection::loadImage(string imageFilePath) {
     ofImage toLoad;
     toLoad.loadImage(imageFilePath);
+    
+    currentImageZones.clear();
+    
+    unsigned indexOfExtension = imageFilePath.find_last_of(".");
+    string zoneFileName = imageFilePath.substr(0,indexOfExtension) + ".zns";
+    
+    ofFile zoneFile(zoneFileName);
+    
+    if (zoneFile.exists()) {
+        ofBuffer buff = zoneFile.readToBuffer();
+        string nextLine = buff.getNextLine();
+        while (nextLine != "") {
+            istringstream iss(nextLine);
+            ofRectangle rect;
+            iss >> rect;
+            currentImageZones.push_back(rect);
+            nextLine = buff.getNextLine();
+        }
+    }
+    
     return toLoad;
 }

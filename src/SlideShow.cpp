@@ -38,6 +38,7 @@ bool SlideShow::setup(float screenWidth, float screenHeight, string imageDirecto
     img = imageCollection->getNextImage();
     
     //animator = new FillAndPanAnimator(img,screenWidth,screenHeight);
+    
     ofRectangle zoneOfInterest(1123,1786,808,800);
     vector<ofRectangle> zones;
     zones.push_back(zoneOfInterest);

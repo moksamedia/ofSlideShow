@@ -22,6 +22,8 @@ class ImageCollection {
     
     ofImage currentImage;
     
+    vector<ofRectangle> currentImageZones;
+    
 public:
     
     ImageCollection(string pathToImageFilesDirectory);

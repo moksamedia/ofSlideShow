@@ -773,6 +773,7 @@
 		4793FFFF189D8E3900B52D7E /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		47E6C81E189CB20E0027662D /* ZoneOfInterestAnimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZoneOfInterestAnimator.cpp; sourceTree = "<group>"; };
 		47E6C81F189CB20E0027662D /* ZoneOfInterestAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneOfInterestAnimator.h; sourceTree = "<group>"; };
+		47F6704918B93DBD003F7F71 /* ZOIState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOIState.h; sourceTree = "<group>"; };
 		4B60B5121896C39F0042FA06 /* SlideShow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlideShow.cpp; sourceTree = "<group>"; };
 		4B60B5131896C39F0042FA06 /* SlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShow.h; sourceTree = "<group>"; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
@@ -2215,6 +2216,7 @@
 				47519339189C3806008F4455 /* ImageCollection.h */,
 				47E6C81E189CB20E0027662D /* ZoneOfInterestAnimator.cpp */,
 				47E6C81F189CB20E0027662D /* ZoneOfInterestAnimator.h */,
+				47F6704918B93DBD003F7F71 /* ZOIState.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

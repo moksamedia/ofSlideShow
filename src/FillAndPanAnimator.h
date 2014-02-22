@@ -22,7 +22,7 @@ class FillAndPanAnimator : public Animator {
     float distanceInPixelsToPan;
 
     int count = 0;
-    float pixelsPerSecond = 10.0;
+    float pixelsPerSecond = 1.0;
     int max;
     
     
