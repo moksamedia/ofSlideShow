@@ -135,6 +135,9 @@
 		479300DB189D8F4400B52D7E /* zoneManagerMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479300D8189D8F0600B52D7E /* zoneManagerMain.cpp */; };
 		479300DC189D8F4400B52D7E /* zoneManagerApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 479300AF189D8E7200B52D7E /* zoneManagerApp.cpp */; };
 		479300DD189D8F4400B52D7E /* zoneManagerApp.h in Sources */ = {isa = PBXBuildFile; fileRef = 479300B0189D8E7200B52D7E /* zoneManagerApp.h */; };
+		47F6706018B97398003F7F71 /* ZOIStart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F6705E18B97398003F7F71 /* ZOIStart.cpp */; };
+		47F6706318B973EF003F7F71 /* ZOITransition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F6706118B973EF003F7F71 /* ZOITransition.cpp */; };
+		47F6706618B97420003F7F71 /* ZOIEnd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47F6706418B97420003F7F71 /* ZOIEnd.cpp */; };
 		4B60B5141896C39F0042FA06 /* SlideShow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B60B5121896C39F0042FA06 /* SlideShow.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -773,7 +776,13 @@
 		4793FFFF189D8E3900B52D7E /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		47E6C81E189CB20E0027662D /* ZoneOfInterestAnimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZoneOfInterestAnimator.cpp; sourceTree = "<group>"; };
 		47E6C81F189CB20E0027662D /* ZoneOfInterestAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoneOfInterestAnimator.h; sourceTree = "<group>"; };
-		47F6704918B93DBD003F7F71 /* ZOIState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOIState.h; sourceTree = "<group>"; };
+		47F6705D18B97373003F7F71 /* ZOIState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZOIState.h; sourceTree = "<group>"; };
+		47F6705E18B97398003F7F71 /* ZOIStart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZOIStart.cpp; sourceTree = "<group>"; };
+		47F6705F18B97398003F7F71 /* ZOIStart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOIStart.h; sourceTree = "<group>"; };
+		47F6706118B973EF003F7F71 /* ZOITransition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZOITransition.cpp; sourceTree = "<group>"; };
+		47F6706218B973EF003F7F71 /* ZOITransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOITransition.h; sourceTree = "<group>"; };
+		47F6706418B97420003F7F71 /* ZOIEnd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZOIEnd.cpp; sourceTree = "<group>"; };
+		47F6706518B97420003F7F71 /* ZOIEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZOIEnd.h; sourceTree = "<group>"; };
 		4B60B5121896C39F0042FA06 /* SlideShow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SlideShow.cpp; sourceTree = "<group>"; };
 		4B60B5131896C39F0042FA06 /* SlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideShow.h; sourceTree = "<group>"; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
@@ -2216,7 +2225,13 @@
 				47519339189C3806008F4455 /* ImageCollection.h */,
 				47E6C81E189CB20E0027662D /* ZoneOfInterestAnimator.cpp */,
 				47E6C81F189CB20E0027662D /* ZoneOfInterestAnimator.h */,
-				47F6704918B93DBD003F7F71 /* ZOIState.h */,
+				47F6705D18B97373003F7F71 /* ZOIState.h */,
+				47F6705E18B97398003F7F71 /* ZOIStart.cpp */,
+				47F6705F18B97398003F7F71 /* ZOIStart.h */,
+				47F6706118B973EF003F7F71 /* ZOITransition.cpp */,
+				47F6706218B973EF003F7F71 /* ZOITransition.h */,
+				47F6706418B97420003F7F71 /* ZOIEnd.cpp */,
+				47F6706518B97420003F7F71 /* ZOIEnd.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -2657,6 +2672,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47F6706318B973EF003F7F71 /* ZOITransition.cpp in Sources */,
+				47F6706018B97398003F7F71 /* ZOIStart.cpp in Sources */,
+				47F6706618B97420003F7F71 /* ZOIEnd.cpp in Sources */,
 				477217BD189D905200AB756C /* ZoneOfInterestAnimator.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				4751933A189C3806008F4455 /* ImageCollection.cpp in Sources */,

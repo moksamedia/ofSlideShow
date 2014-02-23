@@ -13,15 +13,18 @@
 #include "ofMain.h"
 #include "Animator.h"
 #include "ZOIState.h"
+#include "ZOIStart.h"
+#include "ZOIEnd.h"
+#include "ZOITransition.h"
 
 
 class ZoneOfInterestAnimator : public Animator {
     
-protected:
+    friend class ZOIStart;
+    friend class ZOIEnd;
+    friend class ZOITransition;
     
-    ZOIState * startState;
-    ZOIState * transitionState;
-    ZOIState * endState;
+protected:
    
     ZOIState * state;
     
@@ -38,10 +41,12 @@ public:
     
     ZoneOfInterestAnimator(ofImage img, float windowWidth, float windowHeight, vector<ofRectangle> zones);
     
+    ~ZoneOfInterestAnimator();
+
     void draw();
     bool update();
     
-    ofRectangle getAdjustedZoneRectForScreenAspect(ofRectangle zoneRect);
+    ofRectangle getAdjustedZoneRectForScreenAspect(ofRectangle * zoneRect);
     
 };
 
