@@ -13,9 +13,6 @@
 #include "ofMain.h"
 #include "Animator.h"
 #include "ZOIState.h"
-#include "ZOIStart.h"
-#include "ZOIEnd.h"
-#include "ZOITransition.h"
 
 
 class ZoneOfInterestAnimator : public Animator {

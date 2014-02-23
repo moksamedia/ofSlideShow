@@ -8,7 +8,9 @@
 
 #include "ZoneOfInterestAnimator.h"
 #include "ofxTimer.h"
-
+#include "ZOIStart.h"
+#include "ZOIEnd.h"
+#include "ZOITransition.h"
 
 ZoneOfInterestAnimator::ZoneOfInterestAnimator(ofImage img, float windowWidth, float windowHeight, vector<ofRectangle> zones) : Animator(img,windowWidth,windowHeight) {
     
@@ -21,7 +23,7 @@ ZoneOfInterestAnimator::ZoneOfInterestAnimator(ofImage img, float windowWidth, f
         throw "Not enough zones of interest!";
     }
    
-    state = new ZOIStart((void*)this);
+    state = new ZOIStart(this);
     fromZone = &zonesOfInterest[0];
     toZone = &zonesOfInterest[1];
     

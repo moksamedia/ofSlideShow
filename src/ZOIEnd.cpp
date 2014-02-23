@@ -7,7 +7,6 @@
 //
 
 #include "ZOIEnd.h"
-#include "ZoneOfInterestAnimator.h"
 
 /*
  * End
@@ -16,7 +15,9 @@
  * - set state to start
  */
 
-ZOIEnd::ZOIEnd(void * parent): ZOIState(parent) {
+ZOIEnd::ZOIEnd(ZoneOfInterestAnimator * parent) {
+    this->parent = parent;
+
 }
 
 bool ZOIEnd::update() {

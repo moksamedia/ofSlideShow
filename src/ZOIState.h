@@ -10,12 +10,7 @@
 #define slideShow_ZOIState_h
 
 class ZOIState {
-protected:
-    void * parent;
 public:
-    ZOIState(void * parent) {
-        this->parent = parent;
-    }
     virtual void draw() = 0;
     virtual bool update() = 0;
 };

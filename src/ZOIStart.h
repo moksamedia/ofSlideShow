@@ -13,12 +13,14 @@
 #include "ZOIState.h"
 #include "ofxTimer.h"
 #include "ofMain.h"
+#include "ZoneOfInterestAnimator.h"
 
 class ZOIStart : public ZOIState {
+    ZoneOfInterestAnimator * parent;
     ofxTimer timer;
     ofRectangle adjustedRect;
 public:
-    ZOIStart(void* parent);
+    ZOIStart(ZoneOfInterestAnimator* parent);
     void draw();
     bool update();
 };

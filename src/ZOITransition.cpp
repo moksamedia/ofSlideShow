@@ -7,7 +7,6 @@
 //
 
 #include "ZOITransition.h"
-#include "ZoneOfInterestAnimator.h"
 
 
 
@@ -17,7 +16,8 @@
  * - when toZone is reached, set state to end
  */
 
-ZOITransition::ZOITransition(void * parent): ZOIState(parent) {
+ZOITransition::ZOITransition(ZoneOfInterestAnimator * parent) {
+    this->parent = parent;
 }
 
 bool ZOITransition::update() {

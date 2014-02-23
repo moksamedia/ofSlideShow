@@ -7,7 +7,6 @@
 //
 
 #include "ZOIStart.h"
-#include "ZoneOfInterestAnimator.h"
 
 /*
  * Start
@@ -15,21 +14,19 @@
  * - when time is up, set state to transition
  */
 
-ZOIStart::ZOIStart(void * parent): ZOIState(parent) {
-    ZoneOfInterestAnimator * p = (ZoneOfInterestAnimator*)parent;
+ZOIStart::ZOIStart(ZoneOfInterestAnimator * parent) {
+    this->parent = parent;
     
     timer.setup(30000, false);
     timer.startTimer();
-    adjustedRect = p->getAdjustedZoneRectForScreenAspect(p->fromZone);
+    adjustedRect = parent->getAdjustedZoneRectForScreenAspect(parent->fromZone);
     
 }
 
 bool ZOIStart::update() {
-    ZoneOfInterestAnimator * p = (ZoneOfInterestAnimator*)parent;
 
 }
 
 void ZOIStart::draw() {
-    ZoneOfInterestAnimator * p = (ZoneOfInterestAnimator*)parent;
 
 }

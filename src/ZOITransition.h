@@ -12,10 +12,12 @@
 #include <iostream>
 #include "ZOIState.h"
 #include "ofMain.h"
+#include "ZoneOfInterestAnimator.h"
 
 class ZOITransition : public ZOIState {
+    ZoneOfInterestAnimator * parent;
 public:
-    ZOITransition(void * parent);
+    ZOITransition(ZoneOfInterestAnimator * parent);
     void draw();
     bool update();
 };
